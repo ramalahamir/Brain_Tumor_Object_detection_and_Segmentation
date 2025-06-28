@@ -1,39 +1,72 @@
-# Brain Tumor Segmentation using YOLOv11 and SAM2
+# 🧠 Brain Tumor Segmentation with YOLOv11 and SAM2
+- Author: Ramalah Amir
+- Project Type: Medical Image Segmentation (MRI)
 
-## Project Overview
-This project aims to detect and segment brain tumors from MRI images.  
-We combined **YOLOv11** for detecting tumor regions and **SAM (Segment Anything Model)** for creating accurate segmentation masks.  
-The system focuses on identifying three types of tumors: **Glioma**, **Meningioma**, **Pituitary Tumors**, and **No Tumor**.
+## 📌 Overview
+This project focuses on the detection and pixel-level segmentation of brain tumors from MRI scans using a combination of:
+- YOLOv11 for tumor region detection and classification.
+- Segment Anything Model (SAM2) for accurate segmentation masks.
+- The goal is to build a fast, reliable, and automated system that supports early diagnosis by medical professionals through precise tumor localization and segmentation.
 
-## Objectives
-- Detect tumor regions accurately using YOLOv11.
-- Perform pixel-level segmentation using SAM based on detected regions.
-- Improve early diagnosis support through fast and automated analysis.
-- Evaluate the model using precision, recall, accuracy, and mAP metrics.
+## 🎯 Objectives
+- 🧪 Detect and classify tumors from MRI scans using YOLOv11.
+- 🎯 Pass YOLO-predicted bounding boxes to SAM2 for pixel-accurate segmentation.
+- 📊 Evaluate model performance using mAP, precision, recall, and accuracy.
+- 🏥 Develop a useful tool for real-world medical diagnostics.
 
-## Approach
-1. **Data Collection:** MRI images with labeled tumor types.
-2. **Preprocessing:** Resized images, organized datasets, created annotations.
-3. **YOLOv11 Training:** Trained to detect and classify tumor types.
-4. **SAM Segmentation:** Used YOLOv11 outputs to generate pixel-perfect masks.
-5. **Evaluation:** Measured performance on test images.
+## ⚙️ Approach
+### 🗂️ Dataset
+- MRI brain scans annotated with tumor types: Glioma, Meningioma, Pituitary, and No Tumor.
+- Dataset used: Roboflow Tumor Detection Dataset
 
-## Results
-- Achieved reasonable accuracy and segmentation quality.
-- Best mAP (50-95) was around 50% after 20 epochs.
-- Improved mask precision by combining detection with segmentation.
+### 🧠 Model Training
+- YOLOv11 trained on the dataset to classify and locate tumors.
+- Initially tested with 5 epochs, then increased to 20 epochs for improved accuracy.
 
-## Tools & Libraries
+### 🧩 Segmentation Pipeline
+- YOLOv11 outputs are passed as bounding boxes to SAM2.
+- SAM2 generates fine-grained segmentation masks of tumor regions.
+
+### 📈 Evaluation
+- Performance analyzed using standard object detection metrics.
+
+# 📂 Code and Usage
+- Clone the repository.
+- Install dependencies.
+- Load trained YOLOv11 model and test images.
+- Run YOLO detection
+- Pass YOLO output to SAM for segmentation
+
+# 🧪 Results
+## 🎯 YOLOv11 Detection Outputs:
+![Meningioma](/meningioma_3.jpg)
+- Meningioma ✅ Detected
+![No Tumor](/no_tumor_1.jpg)
+- No Tumor ✅ Detected
+![Pituitary](/pituitary_5.jpg)
+- Pituitary	✅ Detected
+![Glioma](/glioma_2.jpg)
+- Glioma ✅ Detected
+
+## 📸 SAM Detection Results:
+### 🧠 Segmentation with SAM2:
+![Pituitary](/Sam_result_for_pituitary_5.jpg)
+- Pituitary ✅ Detected
+
+# 📊 Metrics & Evaluation
+- mAP@50–95: ~50% after 20 epochs
+- Precision: Improved with YOLO + SAM combo
+- Segmentation Accuracy: Visually verified masks show high overlap with true tumor regions
+
+# 🚀 Tools & Libraries
 - Python
-- YOLOv11
-- Segment Anything Model (SAM)
-- Ultralytics
+- YOLOv11 (Ultralytics)
+- Segment Anything Model (SAM2)
+- Roboflow Dataset
+- OpenCV, NumPy, Matplotlib
 
-## Dataset Used is provided here: 
-https://universe.roboflow.com/brain-tumor-detection-wsera/tumor-detection-ko5jp/dataset/8
-
-## How to Run
-1. Clone the repository.
-2. Install the required libraries and dataset.
-3. Load the YOLOv11 trained model.
-4. Pass test images and generate masks with SAM.
+# 🧾 Credits & References
+- Roboflow Brain Tumor Detection Dataset:
+- [Dataset: ](https://universe.roboflow.com/brain-tumor-detection-wsera/tumor-detection-ko5jp/dataset/8)
+- Meta AI — SAM (Segment Anything Model)
+- Ultralytics YOLO

@@ -39,19 +39,24 @@ This project focuses on the detection and pixel-level segmentation of brain tumo
 
 # 🧪 Results
 ## 🎯 YOLOv11 Detection Outputs:
+
 ![Meningioma](/meningioma_3.jpg)
-- Meningioma ✅ Detected
+- Meningioma ✅ Detected.
+  
 ![No Tumor](/no_tumor_1.jpg)
-- No Tumor ✅ Detected
+- No Tumor ✅ Detected.
+  
 ![Pituitary](/pituitary_5.jpg)
-- Pituitary	✅ Detected
+- Pituitary	✅ Detected.
+
 ![Glioma](/glioma_2.jpg)
-- Glioma ✅ Detected
+- Glioma ✅ Detected.
 
 ## 📸 SAM Detection Results:
 ### 🧠 Segmentation with SAM2:
+
 ![Pituitary](/Sam_result_for_pituitary_5.jpg)
-- Pituitary ✅ Detected
+- Pituitary ✅ Detected.
 
 # 📊 Metrics & Evaluation
 - mAP@50–95: ~50% after 20 epochs

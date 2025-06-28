@@ -71,7 +71,6 @@ This project focuses on the detection and pixel-level segmentation of brain tumo
 - OpenCV, NumPy, Matplotlib
 
 # 🧾 Credits & References
-- Roboflow Brain Tumor Detection Dataset:
-- [Dataset: ](https://universe.roboflow.com/brain-tumor-detection-wsera/tumor-detection-ko5jp/dataset/8)
+- [Roboflow Brain Tumor Detection Dataset](https://universe.roboflow.com/brain-tumor-detection-wsera/tumor-detection-ko5jp/dataset/8)
 - Meta AI — SAM (Segment Anything Model)
 - Ultralytics YOLO
